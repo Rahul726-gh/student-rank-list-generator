@@ -56,7 +56,7 @@ function addOrSaveStudent() {
   }
 
   // Enrollment length limit
-  if (enroll.length > 10) {
+  if (enroll.length > 12) {
     alert("Enrollment number must be at most 10 characters.");
     return;
   }
