@@ -79,6 +79,10 @@ header {
   margin-bottom: 15px;
 }
 
+.search-section{
+      width: 428px;
+}
+
 /* Inputs & Buttons */
 input, select, button {
   padding: 10px;
