@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Rank List Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+
+  
+    <header>
+      <h1>🎓 Student Rank List Generator</h1>
+      <button id="themeToggle">🌙</button>
+    </header>
+
+  
+    <div class="dashboard">
+
+      <div class="panel left-panel">
+        <h2>Add / Edit Student</h2>
+        <input type="text" id="name" placeholder="Name" />
+        <input type="text" id="enroll" placeholder="Enrollment No" />
+        <input type="number" id="math" placeholder="Math" />
+        <input type="number" id="science" placeholder="Science" />
+        <input type="number" id="english" placeholder="English" />
+        <button id="addBtn">➕ Add Student</button>
+      </div>
+
+
+      <div class="panel right-panel">
+        <h2>Sort & Search</h2>
+        <div class="sort-section">
+          <label>Sort By:</label>
+          <select id="sortBy">
+            <option value="name">Name</option>
+            <option value="enroll">Enrollment No</option>
+            <option value="math">Math</option>
+            <option value="science">Science</option>
+            <option value="english">English</option>
+            <option value="total">Total</option>
+          </select>
+
+          <label>Algorithm:</label>
+          <select id="sortAlgo">
+            <option value="bubble">Bubble Sort</option>
+            <option value="insertion">Insertion Sort</option>
+            <option value="selection">Selection Sort</option>
+            <option value="quick">Quick Sort</option>
+          </select>
+
+          <button id="rankBtn">🏆 Generate Rank</button>
+        </div>
+
+        <div class="search-section">
+          <input type="text" id="searchInput" placeholder="Search by name/enroll" />
+          <button id="exportBtn">⬇ Export CSV</button>
+        </div>
+
+        <div class="stats" id="stats">
+          <p>Total Students: <span id="totalStudents">0</span></p>
+          <p>Topper: <span id="topperName">-</span></p>
+          <p>Average Marks: <span id="averageMarks">0</span></p>
+        </div>
+      </div>
+
+    </div>
+
+  
+    <div class="table-wrapper">
+      <table id="rankTable">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Enrollment</th>
+            <th>Math</th>
+            <th>Science</th>
+            <th>English</th>
+            <th>Total</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

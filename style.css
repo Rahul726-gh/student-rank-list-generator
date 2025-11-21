@@ -1,0 +1,215 @@
+:root {
+  --primary: #004aad;
+  --secondary: #00a86b;
+  --bg: #f4f7fd;
+  --card-bg: #fff;
+  --text: #222;
+  --text-light: #555;
+  --border: #ccc;
+}
+
+body.dark {
+  --bg: #1e293b;
+  --card-bg: #334155;
+  --text: #f1f5f9;
+  --text-light: #cbd5e1;
+  --border: #475569;
+  --primary: #38bdf8;
+  --secondary: #22c55e;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+  transition: 0.3s;
+}
+
+.container {
+  width: 95%;
+  max-width: 1000px;
+  background: var(--card-bg);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+#themeToggle {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Dashboard Panels */
+.dashboard {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.panel {
+  background: var(--bg);
+  border-radius: 12px;
+  padding: 20px;
+  flex: 1;
+  min-width: 280px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.panel h2 {
+  margin-top: 0;
+  color: var(--primary);
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+/* Inputs & Buttons */
+input, select, button {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+button {
+  background: var(--primary);
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  transition: 0.2s;
+}
+
+#addBtn {
+  background: var(--secondary);
+}
+
+button:hover {
+  opacity: 0.9;
+  transform: scale(1.03);
+}
+
+/* Stats */
+.stats {
+  margin-top: 15px;
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+.stats p {
+  margin: 5px 0;
+}
+
+/* Table */
+/* Table Wrapper */
+.table-wrapper {
+  margin-top: 25px;
+  overflow-x: auto;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 700px;
+}
+
+/* Table Head */
+th {
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+/* Table Cells */
+th, td {
+  border: 1px solid var(--border);
+  padding: 10px;
+  text-align: center;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Striped Rows */
+tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+/* Hover Effect */
+tr:hover {
+  background: #dbe4ff;
+  transform: scale(1.01);
+  transition: 0.2s;
+}
+
+
+/* Action Buttons */
+.action-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 3px;
+  transition: transform 0.2s;
+}
+
+.action-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Dark Mode Table Enhancements */
+body.dark tr:nth-child(even) {
+  background: #475569;
+}
+
+body.dark tr:hover {
+  background: #3b82f6;
+}
+
+body.dark tr.topper {
+  background: #facc15; /* gold in dark mode */
+  color: #000;
+}
+
+/* Action Buttons */
+.action-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 3px;
+  transition: 0.2s;
+}
+
+.action-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Responsive */
+@media(max-width: 768px){
+  .dashboard {
+    flex-direction: column;
+  }
+}
