@@ -1,12 +1,3 @@
-// Fixed and improved script.js for Student Rank List Generator
-// Key changes:
-// - Each student now has a unique `id` (Date.now()) to avoid index-based bugs when filtering.
-// - Robust validation for inputs (required fields, marks 0-100, enroll length <= 10, no duplicates).
-// - Edit mode (save changes) implemented instead of deleting-then-adding.
-// - Search renders filtered rows but edit/delete act on the original students via id.
-// - Ranking algorithms kept; quick sort returns a new array as before.
-// - Stats, topper, and total students are calculated from the main `students` array.
-// - CSV export includes a UTF-8 BOM so Excel opens it cleanly.
 
 let students = JSON.parse(localStorage.getItem("students")) || [];
 // backfill old entries that might not have an id
@@ -206,7 +197,7 @@ function renderTable(data) {
     };
   });
 
-  updateStats();
+  // updateStats();
 }
 
 function startEditStudent(id) {
@@ -238,19 +229,19 @@ function searchStudents() {
   renderTable(filtered);
 }
 
-function updateStats() {
-  totalStudentsEl.textContent = students.length;
-  if (students.length === 0) {
-    topperNameEl.textContent = "-";
-    averageMarksEl.textContent = "0";
-    return;
-  }
-  const totals = students.map(getTotal);
-  const avg = (totals.reduce((a, b) => a + b, 0) / totals.length).toFixed(2);
-  const topper = students[totals.indexOf(Math.max(...totals))].name;
-  topperNameEl.textContent = topper;
-  averageMarksEl.textContent = avg;
-}
+// function updateStats() {
+//   totalStudentsEl.textContent = students.length;
+//   if (students.length === 0) {
+//     topperNameEl.textContent = "-";
+//     averageMarksEl.textContent = "0";
+//     return;
+//   }
+//   const totals = students.map(getTotal);
+//   const avg = (totals.reduce((a, b) => a + b, 0) / totals.length).toFixed(2);
+//   const topper = students[totals.indexOf(Math.max(...totals))].name;
+//   topperNameEl.textContent = topper;
+//   averageMarksEl.textContent = avg;
+// }
 
 function saveData() {
   localStorage.setItem("students", JSON.stringify(students));
